@@ -7,7 +7,7 @@
 getAE = function (accession, path = getwd(), type = "full", extract = TRUE, local = FALSE, sourcedir=path) {
 	
 	if(!local){
-		baseURL = "https://www.ebi.ac.uk/arrayexpress/xml/v2/files"
+		baseURL = "ftp://ftp.ebi.ac.uk/biostudies/nfs/"
 		xmlURL = paste(baseURL,accession,sep="/")
 		xml = xmlTreeParse(suppressWarnings(readLines(xmlURL)),useInternalNodes=TRUE)
 		
