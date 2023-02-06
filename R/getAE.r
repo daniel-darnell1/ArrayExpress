@@ -8,7 +8,7 @@ getAE = function (accession, path = getwd(), type = "full", extract = TRUE, loca
 	
 	if(!local){
 		baseURL = "ftp://ftp.ebi.ac.uk/biostudies/nfs"
-		xmlURL = paste(baseURL,accession,sep="/")
+		xmlURL = paste(baseURL,accession,"E-MEXP-1551.xml",sep="/")
 		xml = xmlTreeParse(suppressWarnings(readLines(xmlURL)),useInternalNodes=TRUE)
 		
 		sdrfURL = xpathSApply(xml,"/files/experiment/file[kind='sdrf' and extension='txt']/url", xmlValue)
